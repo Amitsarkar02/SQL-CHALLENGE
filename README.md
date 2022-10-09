@@ -18,8 +18,8 @@ SQL 10 DAY CHALLENGE
   
   
   
-DAY 2
-QUESTION - Ivy Pro School wants you to work on a Project data that has a table. The table has
+## DAY 2
+* QUESTION - Ivy Pro School wants you to work on a Project data that has a table. The table has
 three columns-Task_ID,Start_Date and End_Date.
 It is guaranteed that the difference between the End_Date and the Start_Date is equal
 to 1 day for each row in the table.
@@ -28,7 +28,7 @@ Ivy is interested in finding the total number of different projects completed. �
 days it took to complete the project in ascending order.  If there is more than one project that have the same number of completion days,
 then order by the start date of the project.
 
-QUERY-CREATE table Project (
+> QUERY-CREATE table Project (
 Task_Id int,
 Start_Date date,
 End_Date date);
@@ -59,19 +59,19 @@ ORDER BY datediff(Min(End_Date),Start_Date),Start_Date ASC\
 
 
 
-DAY 3
-Write an SQL query to report the Id and Names of customers who bought products
+## DAY 3
+* Write an SQL query to report the Id and Names of customers who bought products
 
-create table customers(
-customer_id int,
-customer_name varchar(100),
-constraint c_pk primary key(customer_id));
+> create table customers(
+ customer_id int,
+ customer_name varchar(100),
+ constraint c_pk primary key(customer_id));
 
-create table orders(
-order_id int,
-customer_id int,
-product_name varchar(100),
-constraint o_pk primary key(order_id));
+ create table orders(
+ order_id int,
+ customer_id int,
+ product_name varchar(100),
+ constraint o_pk primary key(order_id));
 
 select * from customers;
 select * from orders;
@@ -114,7 +114,7 @@ order by customer_id;
 
 
 
-DAY 4
+## DAY 4
 1 A 1
 2 A 2
 3 A 3
@@ -127,11 +127,11 @@ DAY 4
 10 C 2
 11 C 3
 
-QUESTION
+* QUESTION
 Write a SQL query to find the maximum and minimum values of continuous
 ‘Sequence’ in each ‘Group’.
 
-QUERY
+> QUERY
 create table Meta(
 sl_no int,
 Group_name varchar(100),
@@ -166,21 +166,21 @@ order BY group_name;
 
 
 
-DAY 5
-QUESTION
+## DAY 5
+* QUESTION
 You are given three tables: Students, Friends and Packages.
 Students contains two columns: ID and Name.
 Friends contains two columns: ID and Friend_ID (ID of the ONLY friend).
 Packages contains two columns: ID and Salary (offered salary in $ thousands per month).
 
-Write a query to output the names of those students whose friends got offered a higher
-salary than them. Names must be ordered by the salary amount offered to the friends. It is
-guaranteed that no two students got same salary offer.
+* Write a query to output the names of those students whose friends got offered a higher
+ salary than them. Names must be ordered by the salary amount offered to the friends. It is
+ guaranteed that no two students got same salary offer.
 
-QUERY
-create table students(
-ID int,
-Name varchar(100));
+> QUERY
+ create table students(
+ ID int,
+ Name varchar(100));
 
 create table friends(
 ID int,
@@ -219,8 +219,8 @@ ORDER BY p2.packages;
 
 
 
-DAY 6 
-QUESTION
+## DAY 6 
+* QUESTION
 Write a query to print the sum of total investment values in 2016
 (TIV_2016), to a scale of 2 decimal places, for the policy holders who meet
 the following criteria:
@@ -234,7 +234,7 @@ TIV_2016 is the total investment value in 2016,
 LAT is the latitude of the policy holder’s city, and
 LON is the longitude of the policy holder’s city.
 
-QUERY
+> QUERY
 CREATE DATABASE Investment;
 USE Investment;
 CREATE table Insurance (
@@ -267,7 +267,7 @@ HAVING COUNT (1)>1);
 
 
 
-DAY 7
+## DAY 7
 student_id int
 subject string
 marks int
@@ -279,14 +279,14 @@ student_id subject marks
 1002 English 70
 1002 Science 80
 1002 Maths 83
-Problem Statement:
+* Problem Statement:
 Reproduce the Table into given format below:
 Output:
 student_id English Science Maths
 1001 88 90 85
 1002 70 80 83
 
-QUERY
+> QUERY
 create table marks_data(
 Student_id int,
 subject varchar(100),
@@ -309,18 +309,18 @@ select * from marks_data;
 
 
 
-DAY 8
-QUESTION
+## DAY 8
+* QUESTION
 person_id is the primary key column for this table.
 This Table has the information about all people waiting for an elevator.
 The person_id and turn columns will contain all numbers from 1 to n,
 where n is the number of rows in the table.
 The maximum weight the elevator can hold is 1000.
-Write an SQL query to find the person_name of the last person who will fit
+* Write an SQL query to find the person_name of the last person who will fit
 in the elevator without exceeding the weight limit.
 It is guaranteed that the person who is first in the Queue can fit in the elevator.
 
-QUERY
+> QUERY
 create table elevator(
 person_id int primary key,
 person_name varchar(100),
@@ -346,8 +346,8 @@ limit 1;
 
 
 
-DAY 9 
-QUESTION
+## DAY 9 
+* QUESTION
 (player_id, event_date) is the primary key of this table.
 This Table shows the Activity of players of some game.
 Each row is a record of a player who logged in and played a number of games
@@ -359,7 +359,7 @@ divided by the number of players whose install date is X, rounded to 2 decimal p
 Write an SQL query that reports for each install date, the number of players that installed
 the game on that day and the day 1 retention.
 
-QUERY
+* QUERY
 with t1 as(
 select *,
 row_number() over(partition by player_id order by event_date) as rnk,
@@ -377,8 +377,8 @@ order by 1
 
 
 
-DAY10
-QUESTION
+## DAY10
+* QUESTION
 An IT Company interviews candidates using coding challenges and contests. Write a query to print the contest_id , hacker_id , name , and the sums of total_submissions,
 total_accepted_submissions, total_views, and total_unique_views for each contest sorted by contest_id. Exclude the contest from the result if all four sums are 0 .
 Note: A specific contest can be used to screen candidates at more than one college, but each college only holds screening contest.
@@ -392,7 +392,7 @@ are asked, so from the view and submission stats:
 4.Sum of total unique views =10+13+19+14=56
 Similarly, we can find the sums for contests 66556 and 94828.
 
-QUERY
+> QUERY
 
 create table contest(
 contest_id int,
