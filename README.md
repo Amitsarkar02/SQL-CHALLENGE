@@ -1,19 +1,19 @@
-# SQL-CHALLENGE
+## SQL-CHALLENGE
 SQL 10 DAY CHALLENGE
 
-DAY 1
-Question: Find the top countries with the 4.9 rating businesses. Output the
-country name along with the number of '4.9' rated businesses and order records
-by the City names in descending order.
-In case there are two countries with the same result, sort them in alphabetical
+## DAY 1
+* Question: Find the top countries with the 4.9 rating businesses. Output the
+ country name along with the number of '4.9' rated businesses and order records
+ by the City names in descending order.
+ In case there are two countries with the same result, sort them in alphabetical
 
-QUERY-
-SELECT Country, City, Count(Rating) as NoOfRating
-FROM Zomato z
-INNER/LEFT/RIGHT JOIN Country_details c on ‘c.Country Code’=z.CountryCode
-WHERE Rating=4.9
-GROUP BY Country
-ORDER BY Country, City Desc;
+> QUERY-
+ SELECT Country, City, Count(Rating) as NoOfRating
+ FROM Zomato z
+ INNER/LEFT/RIGHT JOIN Country_details c on ‘c.Country Code’=z.CountryCode
+ WHERE Rating=4.9
+ GROUP BY Country
+ ORDER BY Country, City Desc;
 
   
   
